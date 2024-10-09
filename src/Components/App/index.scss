@@ -1,0 +1,52 @@
+.container {
+    text-align: center;
+    margin: 1.5rem auto;
+
+    .header-content {
+        margin-bottom: 1rem;
+        color: white;
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        p {
+            color: gray;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (min-width: 769px) {
+    /* Styles for larger screens */
+    .container {
+        width: 60vw;
+    }
+}
+@media (max-width: 768px) {
+    /* Styles for small screens */
+    .container {
+        width: 90vw;
+
+        .header-content {
+            h3 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+// .header {
+//     // text-align: center;
+//
+//     // margin: 1.5rem auto;
+
+//     background-color: red;
+//     // h3 {
+//     //     text-transform: uppercase;
+//     // }
+
+//     // p {
+//     //     color: gray;
+//     // }
+// }

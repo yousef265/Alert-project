@@ -1,0 +1,86 @@
+// ** Default
+$defaultBgColor: rgb(29 31 32 / 71%);
+$defaultTextColor: #c8c8c8;
+$defaultBrdType: solid;
+$defaultBrdColor: #c8c8c8;
+
+// ** Info
+$infoBgColor: rgb(100 108 255 / 8%);
+$infoTextColor: #bcc0ff;
+$infoBrdType: dotted;
+$infoBrdColor: #646cff;
+
+// ** Warning
+$warningBgColor: rgb(255 197 23 / 5%);
+$warningTextColor: #fcd253;
+$warningBrdType: outset;
+$warningBrdColor: rgba(255, 213, 0, 0.793);
+
+// ** Error
+$errorBgColor: rgb(192 29 29 / 15%);
+$errorTextColor: #ef8d8dfa;
+$errorBrdType: dashed;
+$errorBrdColor: rgba(255, 25, 0, 0.322);
+
+// ** Success
+$successBgColor: rgba(246, 238, 9, 0.127);
+$successTextColor: #7acf58d6;
+$successBrdType: inset;
+$successBrdColor: rgba(0, 255, 0, 0.322);
+
+@mixin alert($name, $bgColor, $textColor, $brdType, $brdColor) {
+    .#{$name} {
+        background-color: $bgColor;
+        color: $textColor;
+        padding: 0.75rem;
+        border-radius: 8px;
+        border: 2px $brdType $brdColor;
+        margin-bottom: 1rem;
+
+        .alert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+
+            .left-side {
+                display: flex;
+                align-items: center;
+
+                .icon {
+                    margin-right: 0.5rem;
+                }
+
+                .title {
+                    font-size: 1.3rem;
+                    font-weight: bold;
+                }
+            }
+
+            .right-side {
+                .icon {
+                    cursor: pointer;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        a {
+            color: #9499ff;
+            font-weight: bolder;
+
+            &:hover {
+                color: $brdColor;
+            }
+        }
+    }
+}
+
+@include alert("alert-default", $defaultBgColor, $defaultTextColor, $defaultBrdType, $defaultBrdColor);
+@include alert("alert-info", $infoBgColor, $infoTextColor, $infoBrdType, $infoBrdColor);
+@include alert("alert-warning", $warningBgColor, $warningTextColor, $warningBrdType, $warningBrdColor);
+@include alert("alert-success", $successBgColor, $successTextColor, $successBrdType, $successBrdColor);
+@include alert("alert-error", $errorBgColor, $errorTextColor, $errorBrdType, $errorBrdColor);
